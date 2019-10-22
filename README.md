@@ -12,3 +12,18 @@ part1.py
    Before preprocessing sentence count was 6627371 where as after preprocessing count is 3672744
  
 
+
+Rules for actionable sentences:
+1. Sentence start with MD(can,could)
+2. Sentence start with VB(go,do,make)
+3. Sentence start with VB_Phrase
+		Examples of verb phrases:
+		VB-Phrase: {<RB><VB>}          (carefully drive)
+		VB-Phrase: {<UH><,>*<VB>}      (Bah ! go get) some work
+		VB-Phrase: {<UH><,><VBP>}      (Great ! have fun)    
+		VB-Phrase: {<NN.?>+<,>*<VB>}   (Virat, please mail) me the docs 
+		VB-Phrase: {<DT><,>*<VB>}      (Just carefully listen)
+4. sentence starts with "please"
+5. sentence containing "please" 
+
+
