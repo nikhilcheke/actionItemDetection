@@ -1,7 +1,7 @@
 import pandas as pd
 import re
 from nltk.tokenize import sent_tokenize
-"""
+
 filename = "C:/Users/Nikhil/Desktop/actionItemDetection/enron-email-dataset/emails.csv"
 messagefile = open("C:/Users/Nikhil/Desktop/actionItemDetection/emailData.txt","w")
 
@@ -24,7 +24,7 @@ for row in range(len(data)) :
         print(total)
         
 messagefile.close()
-"""
+
 filterfile = open("C:/Users/Nikhil/Desktop/actionItemDetection/emailDataFilter.txt","w")
 totalSentCount = 0
 filterSentCount = 0
@@ -53,14 +53,7 @@ with open("C:/Users/Nikhil/Desktop/actionItemDetection/emailData.txt") as f:
             continue
         if "=" in line:
             continue
-       
-        
-        """
-        if "www" or  "~~~" or "\t" or "--" or "http:" or "[IMAGE]" or ">>" or "**" or "=" in line:
-            continue
-        if len(line.split()) > 25 or len(line.split()) < 3:
-            continue"""
-       
+
         filterSentCount = filterSentCount + 1
         filterfile.write(line)
         print(totalSentCount,filterSentCount)
