@@ -43,5 +43,29 @@ Following is the flow for objective 2:
 5. Output layer(sigmoid)
 6. Final output
 
+Summary of the built model...
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding_3 (Embedding)      (None, 30, 50)            1673150   
+_________________________________________________________________
+gru_3 (GRU)                  (None, 32)                7968      
+_________________________________________________________________
+dense_3 (Dense)              (None, 1)                 33        
+=================================================================
+Total params: 1,681,151
+Trainable params: 1,681,151
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train...
+******************
+(98486, 30)
+(98486,)
+Train on 98486 samples, validate on 1520 samples
+Epoch 1/25
+ - 182s - loss: 0.3617 - acc: 0.7993 - val_loss: 0.7880 - val_acc: 0.7750
+Epoch 2/25
+ - 170s - loss: 0.0851 - acc: 0.9762 - val_loss: 0.9968 - val_acc: 0.7743
 
 
