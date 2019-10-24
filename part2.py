@@ -4,8 +4,11 @@ from nltk.tree import Tree
 
 def is_actionable(tagged_sent):
 
+        if tagged_sent[-1][0] == "?":
+            return False
+        
         #Sentence starts with verb or modal
-        if tagged_sent[0][1] == "VB" or tagged_sent[0][1] == "MD":
+        if tagged_sent[0][1] == "VB":# or tagged_sent[0][1] == "MD":
             return True
 
         #sentence with first chuck as verb phrase
@@ -16,7 +19,7 @@ def is_actionable(tagged_sent):
 
         #sentence containing plaese keyword
         pleasekey = len([w for w in tagged_sent if w[0].lower() == "please"]) > 0
-        if pleasekey and (tagged_sent[0][1] == "VB" or tagged_sent[0][1] == "MD"):
+        if pleasekey: # and (tagged_sent[0][1] == "VB" or tagged_sent[0][1] == "MD"):
             return True
 
         return False
@@ -28,7 +31,8 @@ def extract_verbphrase(tagged_sent):
                     VB-Phrase: {<PRP><VB>}
                     VB-Phrase: {<NN.?>+<,>*<VB>}
                     VB-Phrase: {<DT><,>*<VB>}
-                    VB-Phrase: {<RB><VB>}"""
+                    VB-Phrase: {<RB><VB>}
+                    Q-Tag: {<,><MD><RB>*<PRP><.>*}"""
     vbchunkparser = RegexpParser(chunkgram)
     return vbchunkparser.parse(tagged_sent)
 
