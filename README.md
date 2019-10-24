@@ -14,9 +14,8 @@ part1.py
 
 
 Rules for actionable sentences:
-1. Sentence start with MD(can,could,will)
-2. Sentence start with VB(go,do,make)
-3. Sentence start with VB_Phrase
+1. Sentence start with VB(go,do,make)
+2. Sentence start with VB_Phrase
 		Examples of verb phrases:
 		VB-Phrase: {<RB><VB>}          (carefully drive)
 		VB-Phrase: {<UH><,>*<VB>}      (Bah ! go get) some work
@@ -24,8 +23,9 @@ Rules for actionable sentences:
 		VB-Phrase: {<NN.?>+<,>*<VB>}   (Virat, please mail) me the docs 
 		VB-Phrase: {<DT><,>*<VB>}      (Just carefully listen)
                 VB-Phrase: {<PRP><VB>}         (you stop) this
-4. sentence starts with "please"
-5. sentence containing "please" 
+3. sentence starts with "please"
+4. sentence containing "please" 
+
 
 part2.py
 1. Read data from a file which is created in part1.py
@@ -34,6 +34,14 @@ part2.py
 4. Classified sentence data saved into two different files for true value(actionable) and false value(non-actionable) sentences.
 
 
+part3.py
+Following is the flow for objective 2:
+1. Text data
+2. Embedding
+3. Deep Network(GRU)
+4. Fully connected layer 
+5. Output layer(sigmoid)
+6. Final output
 
 
 
